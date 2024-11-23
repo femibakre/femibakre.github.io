@@ -1,10 +1,93 @@
 
+ 
+
+/* Grid for dashboards - Single column for vertical alignment */
+.dashboards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Enforce single column layout for all screen sizes */
+    gap: 2rem; /* Add spacing between embeds */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+/* Wrapper for maintaining aspect ratio */
+.dashboard-container {
+    position: relative;
+    width: 100%;
+    padding-top: 80%; /* Height is 0.8 times the width */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Full-sized iframe */
+.dashboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove border for a cleaner look */
+}
+
+
+
+
+
+
+
 .project-content {
-    display: none; /* Hide all project content by default */
+    display: none;
+    padding: 2rem;
 }
 
 .project-content.active {
-    display: block; /* Show the active project content */
+    display: block; /* Show active dashboard content */
+}
+
+.project {
+    width: 90%; /* Adapt width dynamically */
+    max-width: 700px; /* Larger max width for big screens */
+    height: 350px; /* Explicit height for uniform dashboards */
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: auto; /* Center-align each dashboard */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+    .dashboards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for medium screens */
+    }
+    .project {
+        height: auto; /* Adapt height for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboards-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+    .project {
+        width: 100%; /* Full width for small screens */
+        max-width: none; /* Remove max width constraint */
+        height: auto; /* Ensure responsive height */
+    }
 }
 :root {
     --primary-color: #6200ea;
@@ -179,7 +262,8 @@ a {
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 .project-tab:hover {
@@ -199,11 +283,6 @@ a {
     display: block;
 }
 
-.dashboards-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
 
 .projects-scroll-container {
     overflow-x: auto;
@@ -262,20 +341,6 @@ a {
     color: #ffffff;
 }
 
-.dashboard {
-    width: 100%;
-    height: 600px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dashboard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 .contact form {
     display: flex;
     flex-direction: column;
@@ -291,6 +356,11 @@ a {
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.1);
     color: #ffffff;
+}
+
+.contact form textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 .contact form button {
@@ -344,10 +414,6 @@ a {
         margin-right: 0.5rem;
     }
 
-    .dashboard {
-        height: 400px;
-    }
-
     .project-tabs {
         flex-direction: column;
         align-items: center;
@@ -356,5 +422,5 @@ a {
     .project-tab {
         margin: 0.5rem 0;
     }
+    
 }
-
