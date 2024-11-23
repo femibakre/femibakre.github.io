@@ -1,3 +1,11 @@
+
+.project-content {
+    display: none; /* Hide all project content by default */
+}
+
+.project-content.active {
+    display: block; /* Show the active project content */
+}
 :root {
     --primary-color: #6200ea;
     --secondary-color: #03dac6;
