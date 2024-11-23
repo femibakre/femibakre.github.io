@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Scientist & Analyst Portfolio</title>
+    <title>Abubakar Bakre - Data Scientist & Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://github.com/femibakre/femibakre.github.io/blob/main/images/photo.png?raw=true" alt="Logo" class="logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -22,55 +24,108 @@
 
     <main>
         <section id="home" class="hero">
-            <h1>Jane Doe</h1>
+            <h1>Abubakar Bakre</h1>
             <h2>Data Scientist & Analyst</h2>
-            <p>Turning data into actionable insights</p>
+            <p class="hero-paragraph">Turning data into actionable insights</p>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">Python</div>
-                <div class="skill">R</div>
-                <div class="skill">SQL</div>
-                <div class="skill">Machine Learning</div>
-                <div class="skill">Data Visualization</div>
-                <div class="skill">Statistical Analysis</div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <h3>Customer Segmentation</h3>
-                    <p>Used K-means clustering to segment customers based on their purchasing behavior.</p>
-                </div>
-                <div class="project">
-                    <h3>Sales Prediction</h3>
-                    <p>Developed a time series model to forecast monthly sales for a retail company.</p>
-                </div>
-                <div class="project">
-                    <h3>Sentiment Analysis</h3>
-                    <p>Built a natural language processing model to analyze customer reviews.</p>
+        <section id="skills" class="skills">
+            <div class="section-content">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill">Python</div>
+                    <div class="skill">R</div>
+                    <div class="skill">SQL</div>
+                    <div class="skill">Machine Learning</div>
+                    <div class="skill">Data Visualization</div>
+                    <div class="skill">Statistical Analysis</div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <section id="projects" class="projects">
+            <div class="section-content">
+                <h2>Projects</h2>
+                <div class="project-tabs">
+                    <button class="project-tab active" data-tab="power-bi">Power BI</button>
+                    <button class="project-tab" data-tab="sql">SQL</button>
+                    <button class="project-tab" data-tab="machine-learning">Machine Learning</button>
+                </div>
+                <div class="project-content active" id="power-bi">
+                    <div class="dashboards-grid">
+                        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTBkNzA2ZmQtNTFjMi00MGNlLWFlOWYtYmE2Yzk1OTUzMGU4IiwidCI6IjAwMTA1NWQzLWM0YjMtNGFiNS1hNTM2LWFlYjgwNDQ4NTE1YiIsImMiOjh9" title="Sales Dashboard" class="dashboard"></iframe>
+                        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOGI4MmQyNGMtNGM3Zi00YzE3LTg5NmItOWZmNTE2N2JhOWMwIiwidCI6IjAwMTA1NWQzLWM0YjMtNGFiNS1hNTM2LWFlYjgwNDQ4NTE1YiIsImMiOjh9" title="Customer Analytics Dashboard" class="dashboard"></iframe>
+                    </div>
+                </div>
+                <div class="project-content" id="sql">
+                    <div class="projects-scroll-container">
+                        <div class="projects-grid">
+                            <div class="project">
+                                <h3>Customer Segmentation</h3>
+                                <img src="https://via.placeholder.com/300x200" alt="Customer Segmentation Project" class="project-image">
+                                <p>Used SQL queries to segment customers based on their purchasing behavior.</p>
+                                <button class="view-project-btn">View Project</button>
+                            </div>
+                            <div class="project">
+                                <h3>Sales Analysis</h3>
+                                <img src="https://via.placeholder.com/300x200" alt="Sales Analysis Project" class="project-image">
+                                <p>Performed complex SQL queries to analyze sales data and identify trends.</p>
+                                <button class="view-project-btn">View Project</button>
+                            </div>
+                            <div class="project">
+                                <h3>Inventory Management</h3>
+                                <img src="https://via.placeholder.com/300x200" alt="Inventory Management Project" class="project-image">
+                                <p>Developed SQL procedures to optimize inventory levels and reduce costs.</p>
+                                <button class="view-project-btn">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content" id="machine-learning">
+                    <div class="projects-scroll-container">
+                        <div class="projects-grid">
+                            <div class="project">
+                                <h3>Sentiment Analysis</h3>
+                                <img src="https://via.placeholder.com/300x200" alt="Sentiment Analysis Project" class="project-image">
+                                <p>Built a natural language processing model to analyze customer reviews.</p>
+                                <button class="view-project-btn">View Project</button>
+                            </div>
+                            <div class="project">
+                                <h3>Predictive Maintenance</h3>
+                                <img src="https://via.placeholder.com/300x200" alt="Predictive Maintenance Project" class="project-image">
+                                <p>Developed a machine learning model to predict equipment failures in manufacturing.</p>
+                                <button class="view-project-btn">View Project</button>
+                            </div>
+                            <div class="project">
+                                <h3>Customer Churn Prediction</h3>
+                                <img src="https://via.placeholder.com/300x200" alt="Customer Churn Prediction Project" class="project-image">
+                                <p>Created a model to predict customer churn and identify at-risk customers.</p>
+                                <button class="view-project-btn">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="section-content">
+                <h2>Contact Me</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Jane Doe. All rights reserved.</p>
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Abubakar Bakre. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
